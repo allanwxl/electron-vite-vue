@@ -86,7 +86,7 @@ const getAnswer = (result: { singleList: { questionAnswer: string; }[]; poolList
 }
 const goBack = () => {
   router.push({
-    path: "/home"
+    path: "/"
   });
 }
 const reload = () => {
