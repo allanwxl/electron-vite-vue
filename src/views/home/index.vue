@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import HelloWorld from '@/components/HelloWorld.vue'
-import Antd from '@/components/Antd.vue'
+// import HelloWorld from '@/components/HelloWorld.vue'
+import Login from '@/components/Login.vue'
 
 console.log("[App.vue]", `Hello world from Electron ${process.versions.electron}!`)
 </script>
 
 <template>
-  <div>
+  <div class="flex-center">
     <a href="https://www.electronjs.org/" target="_blank">
       <img src="@/assets/electron.svg" class="logo electron" alt="Electron logo" />
     </a>
@@ -17,8 +17,10 @@ console.log("[App.vue]", `Hello world from Electron ${process.versions.electron}
       <img src="@/assets/vue.svg" class="logo vue" alt="Vue logo" />
     </a>
   </div>
-  <HelloWorld msg="Electron + Vite + Vue" />
-  <Antd />
+<!--  <HelloWorld msg="Electron + Vite + Vue" />-->
+  <div class="flex-center">
+    <Login />
+  </div>
   <div class="flex-center">
     Place static files into the <code>/public</code> folder
     <img style="width:5em;" src="/node.svg" alt="Node logo">

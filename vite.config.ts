@@ -7,6 +7,7 @@ import pkg from './package.json'
 import ViteComponents from 'unplugin-vue-components/vite'
 import { AntDesignVueResolver } from 'unplugin-vue-components/resolvers'
 const path = require('path')
+import WindiCSS from 'vite-plugin-windicss'
 
 // https://vitejs.dev/config/
 export default defineConfig(({ command }) => {
@@ -24,6 +25,7 @@ export default defineConfig(({ command }) => {
     },
     plugins: [
       vue(),
+      WindiCSS(),
       ViteComponents({
         resolvers: [
           AntDesignVueResolver(),
