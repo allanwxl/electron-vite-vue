@@ -119,3 +119,16 @@ ipcMain.handle('open-win', (_, arg) => {
     childWindow.loadFile(indexHtml, { hash: arg })
   }
 })
+
+// 自动更新
+// const message = {
+//   error: '检查更新出错',
+//   checking: '正在检查更新……',
+//   updateAva: '检测到新版本，正在下载……',
+//   updateNotAva: '现在使用的就是最新版本，不用更新',
+// };
+
+// 这里是为了在本地做应用升级测试使用
+// if (isDev) {
+//   autoUpdater.updateConfigPath = path.join(__dirname, 'dev-app-update.yml');
+// }
