@@ -29,5 +29,3 @@ jobs:
           # Optional inputs
           # skip-tags: true
           # skip-recent: 5
-          env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
