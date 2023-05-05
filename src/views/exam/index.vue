@@ -11,6 +11,7 @@ const fieldNames = {
   label: 'examTitle',
   value: 'examTitle'
 }
+const answerStr = ref('')
 
 onMounted(async () => {
   await http.post('/login', {"username":"admin","password":"admin","uuid":""}).then((res: any) => {
@@ -76,12 +77,15 @@ const changeExamName = () => {
   })
 }
 const getAnswer = (result: { singleList: { questionAnswer: string; }[]; poolList: { questionAnswer: string; }[]; }) => {
+  answerStr.value = ''
   result.singleList.forEach((el: { questionAnswer: string; }) => {
     console.log(el.questionAnswer)
+    answerStr.value += el.questionAnswer
   })
 
   result.poolList.forEach((el: { questionAnswer: string; }) => {
     console.log(el.questionAnswer)
+    answerStr.value += el.questionAnswer
   })
 }
 const goBack = () => {
@@ -112,6 +116,9 @@ const reload = () => {
       :fieldNames="fieldNames"
       @change="changeExamName"
     ></a-select>
+  </div>
+  <div class="mt-10px">
+    <span>{{ answerStr }}</span>
   </div>
 </template>
 
