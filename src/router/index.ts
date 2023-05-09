@@ -2,6 +2,7 @@ import {createRouter, createWebHashHistory, RouteRecordRaw} from "vue-router";
 
 import homeComponent from "../views/home/index.vue";
 import examComponent from "../views/exam/index.vue";
+import chatGptComponent from "../views/chatGpt/index.vue";
 
 const routes: RouteRecordRaw[] = [
   {
@@ -19,6 +20,14 @@ const routes: RouteRecordRaw[] = [
       title: "题目查看",
     },
     component: examComponent,
+  },
+  {
+    path: "/chatGpt",
+    name: "chatGpt",
+    meta: {
+      title: "ChatGpt",
+    },
+    component: chatGptComponent,
   },
 ];
 const router = createRouter({
