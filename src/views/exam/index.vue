@@ -4,9 +4,14 @@ import http from '../../http/index'
 import { useRouter } from "vue-router";
 import { onMounted, ref } from 'vue'
 
+
 const router = useRouter();
 const examName = ref('')
-const options = ref([
+type optionType = {
+  examBeginDate: number;
+  examTitle: string;
+};
+const options = ref<optionType[]>([
   // {
   //   "examTitle": "202304一窗通办业务水平测试（2）"
   // },
