@@ -387,6 +387,31 @@ const data =
     }
 
 onMounted(async () => {
+  // options.value = [
+  //   {
+  //     "id": null,
+  //     "govDeptId": "",
+  //     "examTitle": "202304一窗通办业务水平测试（2）",
+  //     "examInfo": "单选题：20道。多选题：4道。问答题：0道。满分：100分。",
+  //     "examBeginDate": "2023-04-25 16:35:00",
+  //     "examFinishDate": null,
+  //     "questionId": null,
+  //     "questionScore": null,
+  //     "creator": null,
+  //     "createDate": null,
+  //     "updater": null,
+  //     "updateDate": null,
+  //     "questionType1": null,
+  //     "questionType1Score": null,
+  //     "questionType2": null,
+  //     "questionType2Score": null,
+  //     "questionType3": null,
+  //     "questionType3Score": null,
+  //     "totalScore": null,
+  //     "examDateTime": "2023-04-25 16:35:00 ～ 2023-04-25 17:20:00",
+  //     "examShowType": "2"
+  //   }
+  // ]
   // getAnswer(data.data)
   await http.post('/login', {"username":"admin","password":"admin","uuid":""}).then((res: any) => {
     if (res.code === 0) {
@@ -438,6 +463,7 @@ onMounted(async () => {
 
 // 按照考试题目查询考试题
 const changeExamName = () => {
+  // console.log(examName.value)
   http.get(`/exam/examemployee/${examName.value}?_t=${new Date().getTime()}`).then((res: any) => {
     // console.log(res.data)
     getAnswer(res.data)
@@ -488,11 +514,13 @@ const reload = () => {
     <span>请选择考试题目: </span>
     <a-select
       v-model:value="examName"
-      style="width: 400px"
-      :options="options"
-      :fieldNames="fieldNames"
+      style="width: 500px"
       @change="changeExamName"
-    ></a-select>
+    >
+      <a-select-option v-for="(option, index) in options" :key="index" :value="`${option.examTitle}`">
+        {{ `${option.examTitle}(${option.examBeginDate})` }}
+      </a-select-option>
+    </a-select>
   </div>
   <div class="mt-10px">
     <span>{{ answerStr }}</span>
