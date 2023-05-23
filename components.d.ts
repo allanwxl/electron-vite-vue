@@ -18,6 +18,7 @@ declare module '@vue/runtime-core' {
     AInputPassword: typeof import('ant-design-vue/es')['InputPassword']
     ASelect: typeof import('ant-design-vue/es')['Select']
     ASelectOption: typeof import('ant-design-vue/es')['SelectOption']
+    ATable: typeof import('ant-design-vue/es')['Table']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
     Login: typeof import('./src/components/Login.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']

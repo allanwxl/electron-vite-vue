@@ -15,6 +15,11 @@ const openChatGpt = () => {
     path: "/chatGpt"
   });
 }
+const openAwsExam = () => {
+  router.push({
+    path: "/awsExam"
+  })
+}
 </script>
 
 <template>
@@ -39,6 +44,9 @@ const openChatGpt = () => {
   </div>
   <div class="flex-center">
     <span class="cursor-pointer" @click="openChatGpt">Open ChatGPT Website</span>
+  </div>
+  <div class="flex-center">
+    <span class="cursor-pointer" @click="openAwsExam">Open Aws Exam</span>
   </div>
 </template>
 
