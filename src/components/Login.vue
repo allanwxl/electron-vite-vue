@@ -11,7 +11,7 @@
   const router = useRouter();
   const goExam = () => {
     router.push({
-      path: "/exam",
+      path: "/chatGpt",
     });
   };
 

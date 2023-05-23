@@ -1,7 +1,6 @@
 import {createRouter, createWebHashHistory, RouteRecordRaw} from "vue-router";
 
 import homeComponent from "../views/home/index.vue";
-import examComponent from "../views/exam/index.vue";
 import chatGptComponent from "../views/chatGpt/index.vue";
 import awsExamComponent from "../views/awsExam/index.vue"
 
@@ -13,14 +12,6 @@ const routes: RouteRecordRaw[] = [
       title: "首页",
     },
     component: homeComponent,
-  },
-  {
-    path: "/exam",
-    name: "exam",
-    meta: {
-      title: "题目查看",
-    },
-    component: examComponent,
   },
   {
     path: "/awsExam",
