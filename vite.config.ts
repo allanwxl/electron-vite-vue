@@ -8,6 +8,7 @@ import ViteComponents from 'unplugin-vue-components/vite'
 import { AntDesignVueResolver } from 'unplugin-vue-components/resolvers'
 const path = require('path')
 import WindiCSS from 'vite-plugin-windicss'
+// import sass from 'sass'
 
 // https://vitejs.dev/config/
 export default defineConfig(({ command }) => {
@@ -75,6 +76,13 @@ export default defineConfig(({ command }) => {
       // Use Node.js API in the Renderer-process
       renderer(),
     ],
+    // css: {
+    //   preprocessorOptions: {
+    //     scss: {
+    //       additionalData: '@import "./src/assets/main.module.scss";'
+    //     }
+    //   }
+    // },
     server: process.env.VSCODE_DEBUG && (() => {
       const url = new URL(pkg.debug.env.VITE_DEV_SERVER_URL)
       return {
