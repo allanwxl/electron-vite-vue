@@ -10,7 +10,7 @@ interface Result {
 interface ResultData<T = any> extends Result {
   data?: T;
 }
-const URL: string = 'http://47.92.114.138/lc-dlgjz'
+const URL: string = 'http://test.dalimeizhuang.top/api'
 enum RequestEnums {
   TIMEOUT = 20000,
   OVERDUE = 600, // 登录失效
